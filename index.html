@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A20 Sweets & Bakery | Fresh & Authentic Delights</title>
+
+  <!-- Task 6: SEO Meta Tags -->
+  <meta name="description" content="A20 Sweets & Bakery offers fresh traditional Indian sweets, custom celebratory cakes, and freshly baked savory snacks. Order online today!">
+  <meta name="keywords" content="bakery, sweets shop, custom cakes, gulab jamun, online bakery ordering">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* -------------------------------------------------------------
+       CUSTOM CSS LAYOUT (Roll 020: Second-last digit 2 = Custom CSS)
+       ------------------------------------------------------------- */
+    
+    /* CSS Variables for Color Palette (Task 2) */
+    :root {
+      --primary-color: #4A2E2B;   /* Deep Warm Chocolate Brown */
+      --accent-color: #C86D51;    /* Warm Terracotta / Cinnamon */
+      --background-bg: #FFFBF7;   /* Soft Cream White */
+      --card-bg: #FFFFFF;
+      --text-dark: #2B2B2B;
+      --text-light: #666666;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--background-bg);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      color: var(--primary-color);
+    }
+
+    /* Container for width control */
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* -------------------------------------------------------------
+       HEADER & NAVIGATION (Flexbox)
+       ------------------------------------------------------------- */
+    header {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo h1 {
+      color: #FFFDD0;
+      font-size: 1.6rem;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease; /* Task 3: CSS Transition */
+    }
+
+    nav a:hover {
+      color: var(--accent-color);
+    }
+
+    /* -------------------------------------------------------------
+       HERO SECTION (Flexbox)
+       ------------------------------------------------------------- */
+    .hero {
+      padding: 4rem 0;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .hero-content {
+      flex: 1;
+    }
+
+    .hero-content h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-content p {
+      color: var(--text-light);
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: var(--accent-color);
+      color: white;
+      padding: 0.8rem 1.8rem;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease; /* Task 3: CSS Transition */
+    }
+
+    .btn:hover {
+      background-color: #A9533B;
+      transform: translateY(-2px);
+    }
+
+    .hero-image {
+      flex: 1;
+      text-align: center;
+    }
+
+    .hero-image img {
+      width: 100%;
+      max-width: 450px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    /* -------------------------------------------------------------
+       MENU SECTION & TABLE (Task 3: Semantic Table)
+       ------------------------------------------------------------- */
+    .section-title {
+      text-align: center;
+      margin: 3rem 0 1.5rem 0;
+      font-size: 2rem;
+    }
+
+    .menu-table-wrapper {
+      overflow-x: auto;
+      background: var(--card-bg);
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      padding: 1rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    th, td {
+      padding: 12px 15px;
+      border-bottom: 1px solid #EAEAEA;
+    }
+
+    th {
+      background-color: var(--primary-color);
+      color: white;
+      font-family: 'Playfair Display', serif;
+    }
+
+    tr:hover {
+      background-color: #FFF6F0;
+    }
+
+    /* -------------------------------------------------------------
+       CUSTOM CALCULATOR & FORM (Tasks 3 & 4)
+       ------------------------------------------------------------- */
+    .calculator-section {
+      margin: 4rem 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr; /* Task 3: CSS Grid Layout */
+      gap: 2rem;
+    }
+
+    .form-card, .summary-card {
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    }
+
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-weight: 500;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 0.6rem;
+      border: 1px solid #CCC;
+      border-radius: 5px;
+      font-family: inherit;
+    }
+
+    .radio-group, .checkbox-group {
+      display: flex;
+      gap: 15px;
+      margin-top: 5px;
+    }
+
+    .price-display {
+      font-size: 1.8rem;
+      color: var(--accent-color);
+      font-weight: bold;
+      margin: 1rem 0;
+    }
+
+    /* -------------------------------------------------------------
+       FOOTER & MAP IFRAME (Task 3: iFrame Element)
+       ------------------------------------------------------------- */
+    footer {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 3rem 0 1rem 0;
+      margin-top: 4rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-info h3 {
+      color: #FFFDD0;
+      margin-bottom: 1rem;
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 180px;
+      border: none;
+      border-radius: 8px;
+    }
+
+    .copyright {
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 1rem;
+      font-size: 0.9rem;
+      color: #DDD;
+    }
+
+    /* -------------------------------------------------------------
+       RESPONSIVE MEDIA QUERIES (Task 3: 2 Media Queries)
+       ------------------------------------------------------------- */
+    
+    /* Query 1: Tablet View (max-width: 992px) */
+    @media (max-width: 992px) {
+      .calculator-section {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Query 2: Mobile View (max-width: 768px) */
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .nav-container {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================= HEADER & NAV ================= -->
+  <header>
+    <div class="container nav-container">
+      <div class="logo">
+        <!-- Task 3: SVG Logo Element -->
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FFFDD0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2a10 10 0 1 0 10 10H12V2z"></path>
+          <path d="M12 12L2.5 7.5"></path>
+          <path d="M12 12v10"></path>
+        </svg>
+        <h1>A20 Sweets & Bakery</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#calculator">Price Estimator</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    
+    <!-- ================= HERO SECTION ================= -->
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <h2>Freshly Baked Delights & Authentic Indian Sweets</h2>
+        <p>Order custom celebration cakes, traditional ghee sweets, and hot savory snacks straight to your doorstep in Faridabad.</p>
+        <a href="#calculator" class="btn">Calculate Cake Price</a>
+      </div>
+      <div class="hero-image">
+        <!-- Task 3 & 6: Image with descriptive ALT tag -->
+        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=80" alt="Delicious chocolate birthday cake with berries from A20 Bakery">
+      </div>
+    </section>
+
+    <!-- ================= MENU SECTION (TABLE) ================= -->
+    <section id="menu">
+      <h2 class="section-title">Popular Items & Price List</h2>
+      <div class="menu-table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Item Name</th>
+              <th>Category</th>
+              <th>Portion / Weight</th>
+              <th>Price (₹)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Pure Desi Ghee Gulab Jamun</td>
+              <td>Traditional Sweet</td>
+              <td>1 kg</td>
+              <td>₹450</td>
+            </tr>
+            <tr>
+              <td>Kaju Katli (Silver Leaf)</td>
+              <td>Premium Sweet</td>
+              <td>1 kg</td>
+              <td>₹900</td>
+            </tr>
+            <tr>
+              <td>Belgian Dark Chocolate Cake</td>
+              <td>Bakery Cake</td>
+              <td>1 kg</td>
+              <td>₹750</td>
+            </tr>
+            <tr>
+              <td>Fresh Fruit & Cream Tart</td>
+              <td>Bakery Dessert</td>
+              <td>500 g</td>
+              <td>₹350</td>
+            </tr>
+            <tr>
+              <td>Paneer Patty (Baked Fresh)</td>
+              <td>Savory Snack</td>
+              <td>1 Piece</td>
+              <td>₹45</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ================= CALCULATOR & FORM SECTION ================= -->
+    <section id="calculator">
+      <h2 class="section-title">Custom Cake Price Estimator & Inquiry</h2>
+      
+      <div class="calculator-section">
+        
+        <!-- Task 3: Form with 7 Input Types -->
+        <div class="form-card">
+          <h3>Build Your Cake Order</h3>
+          <form id="cakeForm" onsubmit="handleFormSubmit(event)">
+            
+            <!-- Input 1: Text -->
+            <div class="form-group">
+              <label for="customerName">Your Full Name *</label>
+              <input type="text" id="customerName" class="form-control" placeholder="e.g. Rahul Sharma" required>
+            </div>
+
+            <!-- Input 2: Email -->
+            <div class="form-group">
+              <label for="customerEmail">Email Address *</label>
+              <input type="email" id="customerEmail" class="form-control" placeholder="e.g. rahul@example.com" required>
+            </div>
+
+            <!-- Input 3: Select Dropdown -->
+            <div class="form-group">
+              <label for="flavour">Select Cake Flavour</label>
+              <select id="flavour" class="form-control" onchange="calculatePrice()">
+                <option value="500">Vanilla Sponge (Base: ₹500/kg)</option>
+                <option value="650">Dutch Chocolate (Base: ₹650/kg)</option>
+                <option value="750">Red Velvet Cheese (Base: ₹750/kg)</option>
+                <option value="800">Fresh Exotic Fruit (Base: ₹800/kg)</option>
+              </select>
+            </div>
+
+            <!-- Input 4: Number -->
+            <div class="form-group">
+              <label for="weight">Weight (in kg)</label>
+              <input type="number" id="weight" class="form-control" min="1" max="10" value="1" oninput="calculatePrice()">
+            </div>
+
+            <!-- Input 5: Date -->
+            <div class="form-group">
+              <label for="pickupDate">Delivery / Pickup Date</label>
+              <input type="date" id="pickupDate" class="form-control" required>
+            </div>
+
+            <!-- Input 6: Radio Buttons -->
+            <div class="form-group">
+              <label>Dietary Requirement</label>
+              <div class="radio-group">
+                <label><input type="radio" name="diet" value="regular" checked onchange="calculatePrice()"> Regular (With Egg)</label>
+                <label><input type="radio" name="diet" value="eggless" onchange="calculatePrice()"> 100% Eggless (+₹100)</label>
+              </div>
+            </div>
+
+            <!-- Input 7: Checkbox -->
+            <div class="form-group">
+              <label>Optional Add-ons</label>
+              <div class="checkbox-group">
+                <label><input type="checkbox" id="candle" value="50" onchange="calculatePrice()"> Sparkler Candles (+₹50)</label>
+                <label><input type="checkbox" id="giftBox" value="100" onchange="calculatePrice()"> Premium Gift Box (+₹100)</label>
+              </div>
+            </div>
+
+            <button type="submit" class="btn" style="width: 100%;">Save & Submit Inquiry</button>
+          </form>
+        </div>
+
+        <!-- Summary & LocalStorage Output (Task 4) -->
+        <div class="summary-card">
+          <h3>Estimated Total</h3>
+          <div class="price-display" id="totalPriceDisplay">₹500</div>
+          <p style="font-size: 0.9rem; color: #666;">Note: Final prices may vary slightly based on custom hand-piped message requests.</p>
+          
+          <hr style="margin: 1.5rem 0; border: 0; border-top: 1px solid #EEE;">
+
+          <h4>Your Saved Order Details:</h4>
+          <div id="savedDataDisplay" style="margin-top: 10px; font-size: 0.95rem; color: #444;">
+            <em>No saved order found in browser memory.</em>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer id="contact">
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <h3>A20 Sweets & Bakery</h3>
+        <p>Manav Rachna Campus Road, Sector 43, Faridabad, Haryana</p>
+        <p>Phone: +91 98765 43210</p>
+        <p>Email: contact@a20bakery.com</p>
+      </div>
+      
+      <!-- Task 3: iFrame Element (Google Maps) -->
+      <div class="map-container">
+        <h3>Find Our Shop</h3>
+        <iframe title="Bakery Location Map" src="https://maps.google.com/maps?q=Manav%20Rachna%20University%20Faridabad&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+      </div>
+    </div>
+    
+    <div class="copyright">
+      <p>&copy; 2026 A20 Sweets & Bakery. Built for Web Designing Lab (4.5CS070101) - Roll No. 020.</p>
+    </div>
+  </footer>
+
+  <!-- ================= TASK 4: JAVASCRIPT ================= -->
+  <script>
+    // 1. Function to calculate price dynamically (DOM Updates)
+    function calculatePrice() {
+      // Get base flavor price
+      let basePrice = parseFloat(document.getElementById('flavour').value);
+      
+      // Get weight
+      let weight = parseFloat(document.getElementById('weight').value) || 1;
+      
+      let total = basePrice * weight;
+
+      // Check Eggless radio button (+₹100)
+      const dietOptions = document.getElementsByName('diet');
+      for (let option of dietOptions) {
+        if (option.checked && option.value === 'eggless') {
+          total += 100;
+        }
+      }
+
+      // Check candles (+₹50)
+      if (document.getElementById('candle').checked) {
+        total += parseFloat(document.getElementById('candle').value);
+      }
+
+      // Check gift box (+₹100)
+      if (document.getElementById('giftBox').checked) {
+        total += parseFloat(document.getElementById('giftBox').value);
+      }
+
+      // DOM Update: Update on-screen price
+      document.getElementById('totalPriceDisplay').innerText = "₹" + total;
+      
+      return total;
+    }
+
+    // 2. Function to handle Form Submission & LocalStorage
+    function handleFormSubmit(event) {
+      event.preventDefault(); // Stop page reload
+
+      let name = document.getElementById('customerName').value.trim();
+      let email = document.getElementById('customerEmail').value.trim();
+      let date = document.getElementById('pickupDate').value;
+      let finalPrice = calculatePrice();
+
+      // Form Validation check
+      if (!name || !email || !date) {
+        alert("Please fill in all required fields!");
+        return;
+      }
+
+      // Create an order object
+      let orderDetails = {
+        customerName: name,
+        customerEmail: email,
+        pickupDate: date,
+        estimatedTotal: finalPrice
+      };
+
+      // Task 4: Store data into Local Storage
+      localStorage.setItem('a20_last_order', JSON.stringify(orderDetails));
+
+      // Update UI with stored info
+      displaySavedData();
+
+      alert("Thank you " + name + "! Your order inquiry has been saved successfully.");
+    }
+
+    // 3. Function to retrieve & display LocalStorage data
+    function displaySavedData() {
+      let savedData = localStorage.getItem('a20_last_order');
+      let displayDiv = document.getElementById('savedDataDisplay');
+
+      if (savedData) {
+        let order = JSON.parse(savedData);
+        displayDiv.innerHTML = `
+          <p><strong>Name:</strong> ${order.customerName}</p>
+          <p><strong>Email:</strong> ${order.customerEmail}</p>
+          <p><strong>Pickup Date:</strong> ${order.pickupDate}</p>
+          <p><strong>Estimated Total:</strong> ₹${order.estimatedTotal}</p>
+        `;
+      }
+    }
+
+    // Load saved data automatically when page opens
+    window.onload = function() {
+      calculatePrice();
+      displaySavedData();
+    };
+  </script>
+</body>
+</html>
