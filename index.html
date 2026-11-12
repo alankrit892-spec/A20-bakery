@@ -5,25 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>A20 Sweets & Bakery | Fresh & Authentic Delights</title>
 
-  <!-- Task 6: SEO Meta Tags -->
+  
   <meta name="description" content="A20 Sweets & Bakery offers fresh traditional Indian sweets, custom celebratory cakes, and freshly baked savory snacks. Order online today!">
   <meta name="keywords" content="bakery, sweets shop, custom cakes, gulab jamun, online bakery ordering">
 
-  <!-- Google Fonts -->
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
-    /* -------------------------------------------------------------
-       CUSTOM CSS LAYOUT (Roll 020: Second-last digit 2 = Custom CSS)
-       ------------------------------------------------------------- */
     
-    /* CSS Variables for Color Palette (Task 2) */
-    :root {
       --primary-color: #4A2E2B;   /* Deep Warm Chocolate Brown */
       --accent-color: #C86D51;    /* Warm Terracotta / Cinnamon */
-      --background-bg: #FFFBF7;   /* Soft Cream White */
+      --background-bg: #FFFBF7;   
       --card-bg: #FFFFFF;
       --text-dark: #2B2B2B;
       --text-light: #666666;
@@ -46,17 +41,13 @@
       font-family: 'Playfair Display', Georgia, serif;
       color: var(--primary-color);
     }
-
-    /* Container for width control */
     .container {
       width: 90%;
       max-width: 1100px;
       margin: 0 auto;
     }
 
-    /* -------------------------------------------------------------
-       HEADER & NAVIGATION (Flexbox)
-       ------------------------------------------------------------- */
+  
     header {
       background-color: var(--primary-color);
       color: white;
@@ -101,9 +92,7 @@
       color: var(--accent-color);
     }
 
-    /* -------------------------------------------------------------
-       HERO SECTION (Flexbox)
-       ------------------------------------------------------------- */
+/
     .hero {
       padding: 4rem 0;
       display: flex;
@@ -136,7 +125,7 @@
       text-decoration: none;
       font-weight: 600;
       cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.2s ease; /* Task 3: CSS Transition */
+      transition: background-color 0.3s ease, transform 0.2s ease; 
     }
 
     .btn:hover {
@@ -156,9 +145,6 @@
       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     }
 
-    /* -------------------------------------------------------------
-       MENU SECTION & TABLE (Task 3: Semantic Table)
-       ------------------------------------------------------------- */
     .section-title {
       text-align: center;
       margin: 3rem 0 1.5rem 0;
@@ -194,9 +180,6 @@
       background-color: #FFF6F0;
     }
 
-    /* -------------------------------------------------------------
-       CUSTOM CALCULATOR & FORM (Tasks 3 & 4)
-       ------------------------------------------------------------- */
     .calculator-section {
       margin: 4rem 0;
       display: grid;
@@ -242,9 +225,7 @@
       margin: 1rem 0;
     }
 
-    /* -------------------------------------------------------------
-       FOOTER & MAP IFRAME (Task 3: iFrame Element)
-       ------------------------------------------------------------- */
+   
     footer {
       background-color: var(--primary-color);
       color: white;
@@ -279,18 +260,13 @@
       color: #DDD;
     }
 
-    /* -------------------------------------------------------------
-       RESPONSIVE MEDIA QUERIES (Task 3: 2 Media Queries)
-       ------------------------------------------------------------- */
-    
-    /* Query 1: Tablet View (max-width: 992px) */
     @media (max-width: 992px) {
       .calculator-section {
         grid-template-columns: 1fr;
       }
     }
 
-    /* Query 2: Mobile View (max-width: 768px) */
+   
     @media (max-width: 768px) {
       .hero {
         flex-direction: column;
@@ -335,7 +311,7 @@
 
   <main class="container">
     
-    <!-- ================= HERO SECTION ================= -->
+    
     <section id="home" class="hero">
       <div class="hero-content">
         <h2>Freshly Baked Delights & Authentic Indian Sweets</h2>
@@ -397,7 +373,7 @@
       </div>
     </section>
 
-    <!-- ================= CALCULATOR & FORM SECTION ================= -->
+   
     <section id="calculator">
       <h2 class="section-title">Custom Cake Price Estimator & Inquiry</h2>
       
@@ -484,7 +460,7 @@
 
   </main>
 
-  <!-- ================= FOOTER ================= -->
+  
   <footer id="contact">
     <div class="container footer-grid">
       <div class="footer-info">
@@ -506,7 +482,7 @@
     </div>
   </footer>
 
-  <!-- ================= TASK 4: JAVASCRIPT ================= -->
+ 
   <script>
     // 1. Function to calculate price dynamically (DOM Updates)
     function calculatePrice() {
